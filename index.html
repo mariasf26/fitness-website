@@ -146,27 +146,144 @@
         }
 
         /* Registration form */
-        <!-- Registration Section --> 
-        <section id="contact"> 
-            <h2>Fitness Registration</h2> 
-            <div class="form"> 
-                <h3>Ready to start your fitness journey?</h3> 
-                <p> 
-                    Complete our registration form to join the FitLife program. 
-                </p> 
-                <p> 
-                    You will be asked for your name, age, email, 
-                    fitness goal and a short message. 
-                </p>
-                <a href=https://docs.google.com/forms/d/e/1FAIpQLScIUXPVX6qyUXt2XxOXqVLA4cEgIKcgdpxHLnNuhnPWzEL4dg/viewform?usp=header target="_blank" 
-                >
-                    <button type="button"> 
-                        Register Now 
-                    </button> 
-                </a> 
-            </div>
-    </section>
-        }
+       ```html
+<!-- Registration Section -->
+
+<section id="contact">
+
+    <h2>Fitness Registration</h2>
+
+    <div class="form">
+
+        <h3>Ready to start your fitness journey?</h3>
+
+        <p>
+            Fill in the form below to register.
+        </p>
+
+        <!-- Google Form -->
+
+        <form
+            action="https://docs.google.com/forms/d/e/1FAIpQLScIUXPVX6qyUXt2XxOXqVLA4cEgIKcgdpxHLnNuhnPWzEL4dg/formResponse"
+            method="POST"
+            target="hidden_iframe"
+            onsubmit="submitted=true;"
+        >
+
+            <!-- Full Name -->
+
+            <input
+                type="text"
+                name="entry.296243872"
+                placeholder="Full Name"
+                required
+            >
+
+            <br>
+
+            <!-- Age -->
+
+            <input
+                type="number"
+                name="entry.1889300295"
+                placeholder="Age"
+                required
+            >
+
+            <br>
+
+            <!-- Email -->
+
+            <input
+                type="email"
+                name="entry.994583757"
+                placeholder="Email"
+                required
+            >
+
+            <br>
+
+            <!-- Fitness Goal -->
+
+            <select
+                name="entry.374707549"
+                required
+            >
+
+                <option value="">
+                    Choose your fitness goal
+                </option>
+
+                <option value="Lose Weight">
+                    Lose Weight
+                </option>
+
+                <option value="Build Muscle">
+                    Build Muscle
+                </option>
+
+                <option value="Stay Healthy">
+                    Stay Healthy
+                </option>
+
+                <option value="Improve Fitness">
+                    Improve Fitness
+                </option>
+
+            </select>
+
+            <br>
+
+            <!-- Message -->
+
+            <textarea
+                name="entry.1373597242"
+                rows="5"
+                placeholder="Write your message..."
+            ></textarea>
+
+            <br>
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+        <!-- Hidden iframe -->
+
+        <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            style="display:none;"
+            onload="if(submitted) { showSuccessMessage(); }"
+        ></iframe>
+
+        <p
+            id="registrationMessage"
+            style="color: green; font-weight: bold;"
+        ></p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+    var submitted = false;
+
+
+    function showSuccessMessage() {
+
+        document.getElementById("registrationMessage").innerHTML =
+            "Thank you! Your registration has been submitted successfully.";
+
+    }
+
+</script>
+```
+
 
         /* Footer */
         footer {
