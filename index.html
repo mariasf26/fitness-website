@@ -608,14 +608,9 @@
             <form
 
                 action="https://docs.google.com/forms/d/e/1FAIpQLScIUXPVX6qyUXt2XxOXqVLA4cEgIKcgdpxHLnNuhnPWzEL4dg/formResponse"
-
                 method="POST"
-
-                target="hidden_iframe"
-
-                onsubmit="submitted=true;"
-
-            >
+>
+               
 
 
                 <!-- FULL NAME -->
@@ -750,23 +745,7 @@
             </form>
 
 
-            <!--
-            Hidden iframe prevents
-            the Google Form page from
-            replacing your website.
-            -->
-
-            <iframe
-
-                name="hidden_iframe"
-
-                id="hidden_iframe"
-
-                style="display:none;"
-
-                onload="if(submitted) showSuccessMessage();"
-
-            ></iframe>
+                    
 
 
             <!-- SUCCESS MESSAGE -->
@@ -913,23 +892,7 @@
         }
 
 
-        /* --------------------------------
-           GOOGLE FORM SUBMISSION
-        -------------------------------- */
-
-        var submitted = false;
-
-
-        function showSuccessMessage() {
-
-            document.getElementById(
-                "registrationMessage"
-            ).innerHTML =
-
-                "Thank you! Your registration has been submitted successfully. ✓";
-
-        }
-
+        
 
     </script>
 
