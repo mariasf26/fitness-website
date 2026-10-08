@@ -1,15 +1,23 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FitLife - Fitness Guide</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FitLife - Your Fitness Guide</title>
+
 
     <style>
 
-        /* General page style */
+        /* ------------------------------
+           GENERAL PAGE
+        ------------------------------ */
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -17,24 +25,32 @@
             color: #333;
         }
 
-        /* Header */
+
+        /* ------------------------------
+           HEADER
+        ------------------------------ */
+
         header {
             background-color: #222;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 40px;
+            font-size: 42px;
         }
 
         header p {
             font-size: 18px;
         }
 
-        /* Navigation bar */
+
+        /* ------------------------------
+           NAVIGATION
+        ------------------------------ */
+
         nav {
             background-color: #444;
             text-align: center;
@@ -52,7 +68,11 @@
             color: orange;
         }
 
-        /* Sections */
+
+        /* ------------------------------
+           SECTIONS
+        ------------------------------ */
+
         section {
             padding: 40px;
             text-align: center;
@@ -63,7 +83,11 @@
             margin-bottom: 20px;
         }
 
-        /* Home */
+
+        /* ------------------------------
+           HOME
+        ------------------------------ */
+
         .home {
             background-color: white;
         }
@@ -82,7 +106,11 @@
             background-color: darkorange;
         }
 
-        /* Workout cards */
+
+        /* ------------------------------
+           WORKOUT CARDS
+        ------------------------------ */
+
         .workouts {
             display: flex;
             justify-content: center;
@@ -98,6 +126,10 @@
             box-shadow: 0 3px 8px #aaa;
         }
 
+        .card:hover {
+            transform: scale(1.03);
+        }
+
         .card h3 {
             color: orange;
         }
@@ -106,7 +138,11 @@
             line-height: 1.5;
         }
 
-        /* BMI Calculator */
+
+        /* ------------------------------
+           BMI CALCULATOR
+        ------------------------------ */
+
         .calculator {
             background-color: white;
             max-width: 500px;
@@ -116,181 +152,142 @@
             box-shadow: 0 3px 8px #aaa;
         }
 
-        input, select, textarea {
+
+        /* ------------------------------
+           INPUTS
+        ------------------------------ */
+
+        input,
+        select,
+        textarea {
+
             width: 80%;
+
             padding: 10px;
+
             margin: 8px;
+
             border: 1px solid #aaa;
+
             border-radius: 5px;
+
+            box-sizing: border-box;
         }
 
-        .calculator button,
-        .form button {
+
+        /* ------------------------------
+           BUTTONS
+        ------------------------------ */
+
+        button {
+
             background-color: orange;
+
             color: white;
+
             border: none;
+
             padding: 12px 25px;
+
             border-radius: 5px;
+
             cursor: pointer;
+
+            font-size: 16px;
         }
 
-        .calculator button:hover,
-        .form button:hover {
+        button:hover {
+
             background-color: darkorange;
+
         }
+
+
+        /* ------------------------------
+           BMI RESULT
+        ------------------------------ */
 
         #result {
+
             margin-top: 20px;
+
             font-size: 20px;
+
             font-weight: bold;
         }
 
-        /* Registration form */
-       ```html
-<!-- Registration Section -->
 
-<section id="contact">
+        /* ------------------------------
+           REGISTRATION FORM
+        ------------------------------ */
 
-    <h2>Fitness Registration</h2>
+        .form {
 
-    <div class="form">
+            background-color: white;
 
-        <h3>Ready to start your fitness journey?</h3>
+            max-width: 500px;
 
-        <p>
-            Fill in the form below to register.
-        </p>
+            margin: auto;
 
-        <!-- Google Form -->
+            padding: 25px;
 
-        <form
-            action="https://docs.google.com/forms/d/e/1FAIpQLScIUXPVX6qyUXt2XxOXqVLA4cEgIKcgdpxHLnNuhnPWzEL4dg/formResponse"
-            method="POST"
-            target="hidden_iframe"
-            onsubmit="submitted=true;"
-        >
+            border-radius: 10px;
 
-            <!-- Full Name -->
-
-            <input
-                type="text"
-                name="entry.296243872"
-                placeholder="Full Name"
-                required
-            >
-
-            <br>
-
-            <!-- Age -->
-
-            <input
-                type="number"
-                name="entry.1889300295"
-                placeholder="Age"
-                required
-            >
-
-            <br>
-
-            <!-- Email -->
-
-            <input
-                type="email"
-                name="entry.994583757"
-                placeholder="Email"
-                required
-            >
-
-            <br>
-
-            <!-- Fitness Goal -->
-
-            <select
-                name="entry.374707549"
-                required
-            >
-
-                <option value="">
-                    Choose your fitness goal
-                </option>
-
-                <option value="Lose Weight">
-                    Lose Weight
-                </option>
-
-                <option value="Build Muscle">
-                    Build Muscle
-                </option>
-
-                <option value="Stay Healthy">
-                    Stay Healthy
-                </option>
-
-                <option value="Improve Fitness">
-                    Improve Fitness
-                </option>
-
-            </select>
-
-            <br>
-
-            <!-- Message -->
-
-            <textarea
-                name="entry.1373597242"
-                rows="5"
-                placeholder="Write your message..."
-            ></textarea>
-
-            <br>
-
-            <button type="submit">
-                Register
-            </button>
-
-        </form>
-
-        <!-- Hidden iframe -->
-
-        <iframe
-            name="hidden_iframe"
-            id="hidden_iframe"
-            style="display:none;"
-            onload="if(submitted) { showSuccessMessage(); }"
-        ></iframe>
-
-        <p
-            id="registrationMessage"
-            style="color: green; font-weight: bold;"
-        ></p>
-
-    </div>
-
-</section>
+            box-shadow: 0 3px 8px #aaa;
+        }
 
 
-<script>
+        #registrationMessage {
 
-    var submitted = false;
+            color: green;
 
+            font-weight: bold;
 
-    function showSuccessMessage() {
+            font-size: 18px;
 
-        document.getElementById("registrationMessage").innerHTML =
-            "Thank you! Your registration has been submitted successfully.";
-
-    }
-
-</script>
-```
+            margin-top: 20px;
+        }
 
 
-        /* Footer */
+        /* ------------------------------
+           FOOTER
+        ------------------------------ */
+
         footer {
+
             background-color: #222;
+
             color: white;
+
             text-align: center;
+
             padding: 20px;
+        }
+
+
+        /* ------------------------------
+           MOBILE
+        ------------------------------ */
+
+        @media screen and (max-width: 600px) {
+
+            nav a {
+
+                display: block;
+
+                margin: 10px;
+            }
+
+            section {
+
+                padding: 25px 15px;
+            }
+
+            .card {
+
+                width: 80%;
+            }
+
         }
 
     </style>
@@ -300,171 +297,243 @@
 
 <body>
 
-    <!-- Header -->
+
+    <!-- ==================================
+         HEADER
+    =================================== -->
 
     <header>
+
         <h1>FitLife</h1>
-        <p>Your Fitness Guide</p>
+
+        <p>
+            Your Fitness Guide
+        </p>
+
     </header>
 
 
-    <!-- Navigation -->
+    <!-- ==================================
+         NAVIGATION
+    =================================== -->
 
     <nav>
 
-        <a href="#home">Home</a>
+        <a href="#home">
+            Home
+        </a>
 
-        <a href="#workouts">Workouts</a>
+        <a href="#workouts">
+            Workouts
+        </a>
 
-        <a href="#bmi">BMI Calculator</a>
+        <a href="#bmi">
+            BMI Calculator
+        </a>
 
-        <a href="#contact">Registration</a>
+        <a href="#contact">
+            Registration
+        </a>
 
     </nav>
 
 
-    <!-- Home Section -->
+    <!-- ==================================
+         HOME
+    =================================== -->
 
-    <section id="home" class="home">
+    <section id="home"
+             class="home">
 
-        <h2>Welcome to FitLife!</h2>
+        <h2>
+            Welcome to FitLife!
+        </h2>
 
         <p>
-            Welcome to FitLife, your simple guide to exercise,
-            fitness and healthy living.
+            Welcome to FitLife, your simple guide
+            to exercise, fitness and healthy living.
         </p>
 
         <p>
-            Start moving, stay healthy and enjoy your fitness journey!
+            Start moving, stay healthy and enjoy
+            your fitness journey!
         </p>
+
 
         <button onclick="showMessage()">
+
             Start Your Fitness Journey
+
         </button>
+
 
         <p id="welcomeMessage"></p>
 
     </section>
 
 
-    <!-- Workouts Section -->
+    <!-- ==================================
+         WORKOUTS
+    =================================== -->
 
     <section id="workouts">
 
-        <h2>Our Workouts</h2>
+        <h2>
+            Our Workouts
+        </h2>
+
 
         <div class="workouts">
 
 
-            <!-- Workout 1 -->
+            <!-- SQUATS -->
 
             <div class="card">
 
-                <h3>Squats</h3>
+                <h3>
+                    Squats
+                </h3>
 
                 <p>
-                    Squats strengthen your legs and improve
-                    your lower body strength.
+                    Squats strengthen your legs
+                    and improve lower body strength.
                 </p>
 
-                <p><b>Recommended:</b> 3 × 15 repetitions</p>
+                <p>
+                    <b>Recommended:</b>
+                    3 × 15 repetitions
+                </p>
 
             </div>
 
 
-            <!-- Workout 2 -->
+            <!-- PUSH UPS -->
 
             <div class="card">
 
-                <h3>Push-ups</h3>
+                <h3>
+                    Push-ups
+                </h3>
 
                 <p>
-                    Push-ups work your chest, shoulders
-                    and arms.
+                    Push-ups work your chest,
+                    shoulders and arms.
                 </p>
 
-                <p><b>Recommended:</b> 3 × 10 repetitions</p>
+                <p>
+                    <b>Recommended:</b>
+                    3 × 10 repetitions
+                </p>
 
             </div>
 
 
-            <!-- Workout 3 -->
+            <!-- LUNGES -->
 
             <div class="card">
 
-                <h3>Lunges</h3>
+                <h3>
+                    Lunges
+                </h3>
 
                 <p>
-                    Lunges are excellent for strengthening
-                    the legs and improving balance.
+                    Lunges strengthen the legs
+                    and improve balance.
                 </p>
 
-                <p><b>Recommended:</b> 3 × 10 each leg</p>
+                <p>
+                    <b>Recommended:</b>
+                    3 × 10 each leg
+                </p>
 
             </div>
 
 
-            <!-- Workout 4 -->
+            <!-- PLANK -->
 
             <div class="card">
 
-                <h3>Plank</h3>
+                <h3>
+                    Plank
+                </h3>
 
                 <p>
-                    The plank helps strengthen your
-                    abdominal and core muscles.
+                    The plank helps strengthen
+                    your abdominal and core muscles.
                 </p>
 
-                <p><b>Recommended:</b> 30 seconds × 3</p>
+                <p>
+                    <b>Recommended:</b>
+                    30 seconds × 3
+                </p>
 
             </div>
 
 
-            <!-- Workout 5 -->
+            <!-- JUMPING JACKS -->
 
             <div class="card">
 
-                <h3>Jumping Jacks</h3>
+                <h3>
+                    Jumping Jacks
+                </h3>
 
                 <p>
-                    Jumping jacks are a simple exercise
-                    that increases your heart rate.
+                    Jumping jacks increase your
+                    heart rate and improve fitness.
                 </p>
 
-                <p><b>Recommended:</b> 30 seconds × 3</p>
+                <p>
+                    <b>Recommended:</b>
+                    30 seconds × 3
+                </p>
 
             </div>
 
 
-            <!-- Workout 6 -->
+            <!-- SIT UPS -->
 
             <div class="card">
 
-                <h3>Sit-ups</h3>
+                <h3>
+                    Sit-ups
+                </h3>
 
                 <p>
-                    Sit-ups help strengthen your abdominal
-                    muscles.
+                    Sit-ups help strengthen
+                    your abdominal muscles.
                 </p>
 
-                <p><b>Recommended:</b> 3 × 15 repetitions</p>
+                <p>
+                    <b>Recommended:</b>
+                    3 × 15 repetitions
+                </p>
 
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- BMI Calculator -->
+    <!-- ==================================
+         BMI CALCULATOR
+    =================================== -->
 
     <section id="bmi">
 
-        <h2>BMI Calculator</h2>
+        <h2>
+            BMI Calculator
+        </h2>
+
 
         <div class="calculator">
 
-            <p>Enter your weight and height:</p>
+            <p>
+                Enter your weight and height:
+            </p>
+
 
             <input
                 type="number"
@@ -472,7 +541,9 @@
                 placeholder="Weight in kg"
             >
 
+
             <br>
+
 
             <input
                 type="number"
@@ -480,11 +551,16 @@
                 placeholder="Height in cm"
             >
 
+
             <br>
 
+
             <button onclick="calculateBMI()">
+
                 Calculate BMI
+
             </button>
+
 
             <div id="result"></div>
 
@@ -493,91 +569,219 @@
     </section>
 
 
-    <!-- Registration Section -->
+    <!-- ==================================
+         REGISTRATION
+    =================================== -->
 
     <section id="contact">
 
-        <h2>Fitness Registration</h2>
+        <h2>
+            Fitness Registration
+        </h2>
+
 
         <div class="form">
 
-            <form onsubmit="registerUser(event)">
+            <h3>
+                Ready to start your fitness journey?
+            </h3>
+
+
+            <p>
+                Fill in the information below
+                to register.
+            </p>
+
+
+            <!--
+            IMPORTANT:
+
+            This form is connected directly
+            to your Google Form.
+
+            The information will appear
+            in your Google Form responses
+            and Google Sheet.
+            -->
+
+
+            <form
+
+                action="https://docs.google.com/forms/d/e/1FAIpQLScIUXPVX6qyUXt2XxOXqVLA4cEgIKcgdpxHLnNuhnPWzEL4dg/formResponse"
+
+                method="POST"
+
+                target="hidden_iframe"
+
+                onsubmit="submitted=true;"
+
+            >
+
+
+                <!-- FULL NAME -->
 
                 <input
+
                     type="text"
-                    id="name"
+
+                    name="entry.296243872"
+
                     placeholder="Full Name"
+
                     required
+
                 >
+
 
                 <br>
 
+
+                <!-- AGE -->
+
                 <input
+
                     type="number"
-                    id="age"
+
+                    name="entry.1889300295"
+
                     placeholder="Age"
+
                     required
+
                 >
 
+
                 <br>
+
+
+                <!-- EMAIL -->
 
                 <input
+
                     type="email"
-                    id="email"
+
+                    name="entry.994583757"
+
                     placeholder="Email"
+
                     required
+
                 >
+
 
                 <br>
 
-                <select id="goal">
+
+                <!-- FITNESS GOAL -->
+
+                <select
+
+                    name="entry.374707549"
+
+                    required
+
+                >
 
                     <option value="">
+
                         Choose your fitness goal
+
                     </option>
+
 
                     <option value="Lose Weight">
+
                         Lose Weight
+
                     </option>
+
 
                     <option value="Build Muscle">
+
                         Build Muscle
+
                     </option>
+
 
                     <option value="Stay Healthy">
+
                         Stay Healthy
+
                     </option>
 
+
                     <option value="Improve Fitness">
+
                         Improve Fitness
+
                     </option>
 
                 </select>
 
+
                 <br>
+
+
+                <!-- MESSAGE -->
 
                 <textarea
-                    id="message"
+
+                    name="entry.1373597242"
+
                     rows="5"
+
                     placeholder="Write your message..."
+
                 ></textarea>
+
 
                 <br>
 
+
+                <!-- REGISTER BUTTON -->
+
                 <button type="submit">
+
                     Register
+
                 </button>
+
 
             </form>
 
+
+            <!--
+            Hidden iframe prevents
+            the Google Form page from
+            replacing your website.
+            -->
+
+            <iframe
+
+                name="hidden_iframe"
+
+                id="hidden_iframe"
+
+                style="display:none;"
+
+                onload="if(submitted) showSuccessMessage();"
+
+            ></iframe>
+
+
+            <!-- SUCCESS MESSAGE -->
+
             <p id="registrationMessage"></p>
+
 
         </div>
 
     </section>
 
 
-    <!-- Footer -->
+    <!-- ==================================
+         FOOTER
+    =================================== -->
 
     <footer>
 
@@ -592,104 +796,140 @@
     </footer>
 
 
-    <!-- JavaScript -->
+    <!-- ==================================
+         JAVASCRIPT
+    =================================== -->
 
     <script>
 
-        /* Welcome button */
+
+        /* --------------------------------
+           HOME BUTTON
+        -------------------------------- */
 
         function showMessage() {
 
-            document.getElementById("welcomeMessage").innerHTML =
+            document.getElementById(
+                "welcomeMessage"
+            ).innerHTML =
                 "Great! Let's start your fitness journey! 💪";
 
         }
 
 
-        /* BMI Calculator */
+        /* --------------------------------
+           BMI CALCULATOR
+        -------------------------------- */
 
         function calculateBMI() {
 
+
             var weight =
-                document.getElementById("weight").value;
+                document.getElementById(
+                    "weight"
+                ).value;
+
 
             var height =
-                document.getElementById("height").value;
+                document.getElementById(
+                    "height"
+                ).value;
 
-            if (weight == "" || height == "") {
 
-                document.getElementById("result").innerHTML =
+            /* Check if fields are empty */
+
+            if (
+                weight == "" ||
+                height == ""
+            ) {
+
+                document.getElementById(
+                    "result"
+                ).innerHTML =
                     "Please enter your weight and height.";
 
                 return;
+
             }
 
 
-            /* Convert height from centimeters to meters */
+            /* Convert cm to meters */
 
             height = height / 100;
 
 
             /* Calculate BMI */
 
-            var bmi = weight / (height * height);
+            var bmi =
+                weight /
+                (height * height);
 
 
-            /* Determine BMI category */
+            /* Determine category */
 
             var category;
 
 
             if (bmi < 18.5) {
 
-                category = "Underweight";
+                category =
+                    "Underweight";
 
             }
 
             else if (bmi < 25) {
 
-                category = "Normal weight";
+                category =
+                    "Normal weight";
 
             }
 
             else if (bmi < 30) {
 
-                category = "Overweight";
+                category =
+                    "Overweight";
 
             }
 
             else {
 
-                category = "Obese";
+                category =
+                    "Obese";
 
             }
 
 
             /* Display result */
 
-            document.getElementById("result").innerHTML =
-                "Your BMI is " + bmi.toFixed(1) +
-                "<br>Category: " + category;
+            document.getElementById(
+                "result"
+            ).innerHTML =
+
+                "Your BMI is " +
+                bmi.toFixed(1) +
+                "<br>Category: " +
+                category;
 
         }
 
 
-        /* Registration form */
+        /* --------------------------------
+           GOOGLE FORM SUBMISSION
+        -------------------------------- */
 
-        function registerUser(event) {
-
-            event.preventDefault();
-
-
-            var name =
-                document.getElementById("name").value;
+        var submitted = false;
 
 
-            document.getElementById("registrationMessage").innerHTML =
-                "Thank you, " + name +
-                "! Your registration was successful. 💪";
+        function showSuccessMessage() {
+
+            document.getElementById(
+                "registrationMessage"
+            ).innerHTML =
+
+                "Thank you! Your registration has been submitted successfully. ✓";
 
         }
+
 
     </script>
 
@@ -697,3 +937,4 @@
 </body>
 
 </html>
+```
