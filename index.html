@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitLife - Fitness Guide</title>
+
+    <style>
+
+        /* General page style */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        /* Sections */
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* Home */
+        .home {
+            background-color: white;
+        }
+
+        .home button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 17px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .home button:hover {
+            background-color: darkorange;
+        }
+
+        /* Workout cards */
+        .workouts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            width: 220px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px #aaa;
+        }
+
+        .card h3 {
+            color: orange;
+        }
+
+        .card p {
+            line-height: 1.5;
+        }
+
+        /* BMI Calculator */
+        .calculator {
+            background-color: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px #aaa;
+        }
+
+        input, select, textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 8px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        .calculator button,
+        .form button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calculator button:hover,
+        .form button:hover {
+            background-color: darkorange;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Registration form */
+        .form {
+            background-color: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px #aaa;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+        <h1>FitLife</h1>
+        <p>Your Fitness Guide</p>
+    </header>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#workouts">Workouts</a>
+
+        <a href="#bmi">BMI Calculator</a>
+
+        <a href="#contact">Registration</a>
+
+    </nav>
+
+
+    <!-- Home Section -->
+
+    <section id="home" class="home">
+
+        <h2>Welcome to FitLife!</h2>
+
+        <p>
+            Welcome to FitLife, your simple guide to exercise,
+            fitness and healthy living.
+        </p>
+
+        <p>
+            Start moving, stay healthy and enjoy your fitness journey!
+        </p>
+
+        <button onclick="showMessage()">
+            Start Your Fitness Journey
+        </button>
+
+        <p id="welcomeMessage"></p>
+
+    </section>
+
+
+    <!-- Workouts Section -->
+
+    <section id="workouts">
+
+        <h2>Our Workouts</h2>
+
+        <div class="workouts">
+
+
+            <!-- Workout 1 -->
+
+            <div class="card">
+
+                <h3>Squats</h3>
+
+                <p>
+                    Squats strengthen your legs and improve
+                    your lower body strength.
+                </p>
+
+                <p><b>Recommended:</b> 3 × 15 repetitions</p>
+
+            </div>
+
+
+            <!-- Workout 2 -->
+
+            <div class="card">
+
+                <h3>Push-ups</h3>
+
+                <p>
+                    Push-ups work your chest, shoulders
+                    and arms.
+                </p>
+
+                <p><b>Recommended:</b> 3 × 10 repetitions</p>
+
+            </div>
+
+
+            <!-- Workout 3 -->
+
+            <div class="card">
+
+                <h3>Lunges</h3>
+
+                <p>
+                    Lunges are excellent for strengthening
+                    the legs and improving balance.
+                </p>
+
+                <p><b>Recommended:</b> 3 × 10 each leg</p>
+
+            </div>
+
+
+            <!-- Workout 4 -->
+
+            <div class="card">
+
+                <h3>Plank</h3>
+
+                <p>
+                    The plank helps strengthen your
+                    abdominal and core muscles.
+                </p>
+
+                <p><b>Recommended:</b> 30 seconds × 3</p>
+
+            </div>
+
+
+            <!-- Workout 5 -->
+
+            <div class="card">
+
+                <h3>Jumping Jacks</h3>
+
+                <p>
+                    Jumping jacks are a simple exercise
+                    that increases your heart rate.
+                </p>
+
+                <p><b>Recommended:</b> 30 seconds × 3</p>
+
+            </div>
+
+
+            <!-- Workout 6 -->
+
+            <div class="card">
+
+                <h3>Sit-ups</h3>
+
+                <p>
+                    Sit-ups help strengthen your abdominal
+                    muscles.
+                </p>
+
+                <p><b>Recommended:</b> 3 × 15 repetitions</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BMI Calculator -->
+
+    <section id="bmi">
+
+        <h2>BMI Calculator</h2>
+
+        <div class="calculator">
+
+            <p>Enter your weight and height:</p>
+
+            <input
+                type="number"
+                id="weight"
+                placeholder="Weight in kg"
+            >
+
+            <br>
+
+            <input
+                type="number"
+                id="height"
+                placeholder="Height in cm"
+            >
+
+            <br>
+
+            <button onclick="calculateBMI()">
+                Calculate BMI
+            </button>
+
+            <div id="result"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Registration Section -->
+
+    <section id="contact">
+
+        <h2>Fitness Registration</h2>
+
+        <div class="form">
+
+            <form onsubmit="registerUser(event)">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Full Name"
+                    required
+                >
+
+                <br>
+
+                <input
+                    type="number"
+                    id="age"
+                    placeholder="Age"
+                    required
+                >
+
+                <br>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <br>
+
+                <select id="goal">
+
+                    <option value="">
+                        Choose your fitness goal
+                    </option>
+
+                    <option value="Lose Weight">
+                        Lose Weight
+                    </option>
+
+                    <option value="Build Muscle">
+                        Build Muscle
+                    </option>
+
+                    <option value="Stay Healthy">
+                        Stay Healthy
+                    </option>
+
+                    <option value="Improve Fitness">
+                        Improve Fitness
+                    </option>
+
+                </select>
+
+                <br>
+
+                <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Write your message..."
+                ></textarea>
+
+                <br>
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+
+            <p id="registrationMessage"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 FitLife - Your Fitness Guide
+        </p>
+
+        <p>
+            Stay Active. Stay Healthy.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        /* Welcome button */
+
+        function showMessage() {
+
+            document.getElementById("welcomeMessage").innerHTML =
+                "Great! Let's start your fitness journey! 💪";
+
+        }
+
+
+        /* BMI Calculator */
+
+        function calculateBMI() {
+
+            var weight =
+                document.getElementById("weight").value;
+
+            var height =
+                document.getElementById("height").value;
+
+            if (weight == "" || height == "") {
+
+                document.getElementById("result").innerHTML =
+                    "Please enter your weight and height.";
+
+                return;
+            }
+
+
+            /* Convert height from centimeters to meters */
+
+            height = height / 100;
+
+
+            /* Calculate BMI */
+
+            var bmi = weight / (height * height);
+
+
+            /* Determine BMI category */
+
+            var category;
+
+
+            if (bmi < 18.5) {
+
+                category = "Underweight";
+
+            }
+
+            else if (bmi < 25) {
+
+                category = "Normal weight";
+
+            }
+
+            else if (bmi < 30) {
+
+                category = "Overweight";
+
+            }
+
+            else {
+
+                category = "Obese";
+
+            }
+
+
+            /* Display result */
+
+            document.getElementById("result").innerHTML =
+                "Your BMI is " + bmi.toFixed(1) +
+                "<br>Category: " + category;
+
+        }
+
+
+        /* Registration form */
+
+        function registerUser(event) {
+
+            event.preventDefault();
+
+
+            var name =
+                document.getElementById("name").value;
+
+
+            document.getElementById("registrationMessage").innerHTML =
+                "Thank you, " + name +
+                "! Your registration was successful. 💪";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
